@@ -1,0 +1,12 @@
+{
+  "name": "dobu-martial-arts",
+  "version": "1.0.0",
+  "description": "DoBu Martial Arts full-stack website",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite server/server.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

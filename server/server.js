@@ -12,7 +12,7 @@ const { DatabaseSync } = require("node:sqlite");
 
 const PORT = process.env.PORT || 3000;
 const ROOT = path.join(__dirname, "..");           // project root
-const DB_PATH = path.join(ROOT, "dobu.db");
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, "..", "dobu.db");
 
 /* ---------------- DATABASE ---------------- */
 

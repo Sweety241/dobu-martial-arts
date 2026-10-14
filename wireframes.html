@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DoBu Wireframes — Medium Fidelity</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #e8e8e8;
+        padding: 40px;
+        color: #222;
+    }
+
+    h1.page-title {
+        font-size: 22px;
+        margin-bottom: 8px;
+        color: #080808;
+    }
+
+    p.page-subtitle {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    /* ------- Wireframe canvas ------- */
+
+    .wireframe {
+        width: 900px;
+        background: #ffffff;
+        border: 2px solid #333;
+        margin: 0 auto 50px;
+        position: relative;
+        page-break-inside: avoid;
+    }
+
+    .wf-label {
+        position: absolute;
+        top: -26px;
+        left: 0;
+        font-size: 13px;
+        font-weight: bold;
+        color: #d71920;
+        letter-spacing: 1px;
+    }
+
+    /* ------- Nav bar ------- */
+
+    .wf-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        background: #080808;
+        color: #fff;
+        font-size: 10px;
+    }
+
+    .wf-logo {
+        font-weight: 900;
+        font-size: 16px;
+        letter-spacing: -0.5px;
+    }
+
+    .wf-logo small {
+        display: block;
+        font-size: 7px;
+        color: #d71920;
+        letter-spacing: 2px;
+    }
+
+    .wf-nav-links {
+        display: flex;
+        gap: 10px;
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .wf-nav-links span {
+        padding: 3px 5px;
+        border: 1px solid #444;
+    }
+
+    /* ------- Hero block ------- */
+
+    .wf-hero {
+        background: #111;
+        color: #fff;
+        padding: 40px 30px;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .wf-hero.medium {
+        min-height: 120px;
+        padding: 30px;
+    }
+
+    .wf-hero-eyebrow {
+        color: #d71920;
+        font-size: 8px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+
+    .wf-hero h2 {
+        font-size: 32px;
+        line-height: 1;
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+
+    .wf-hero h2 span { color: #d71920; }
+
+    .wf-hero p {
+        font-size: 10px;
+        color: #bbb;
+        max-width: 400px;
+        line-height: 1.5;
+    }
+
+    .wf-hero-btns {
+        display: flex;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .wf-btn {
+        font-size: 9px;
+        font-weight: bold;
+        padding: 8px 14px;
+        letter-spacing: 0.5px;
+        border: 1px solid #d71920;
+        background: #d71920;
+        color: #fff;
+    }
+
+    .wf-btn.outline {
+        background: transparent;
+        border-color: #fff;
+    }
+
+    .wf-btn.dark {
+        background: #080808;
+        border-color: #080808;
+    }
+
+    /* ------- Section ------- */
+
+    .wf-section {
+        padding: 25px 30px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .wf-section.dark {
+        background: #080808;
+        color: #fff;
+    }
+
+    .wf-section.light {
+        background: #f4f4f4;
+    }
+
+    .wf-section-label {
+        font-size: 8px;
+        font-weight: bold;
+        color: #d71920;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+
+    .wf-section h3 {
+        font-size: 18px;
+        font-weight: 900;
+        margin-bottom: 15px;
+        line-height: 1;
+    }
+
+    .wf-section h3 span { color: #d71920; }
+
+    /* ------- Content blocks ------- */
+
+    .wf-box {
+        background: #f0f0f0;
+        border: 1px dashed #999;
+        padding: 12px;
+        font-size: 9px;
+        color: #666;
+        text-align: center;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wf-row {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .wf-row.cols-2 { grid-template-columns: 1fr 1fr; }
+    .wf-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .wf-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .wf-row.cols-5 { grid-template-columns: repeat(5, 1fr); }
+
+    .wf-card {
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 14px;
+        font-size: 9px;
+        color: #555;
+    }
+
+    .wf-card-num {
+        color: #d71920;
+        font-size: 9px;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    .wf-card h4 {
+        font-size: 11px;
+        color: #080808;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .wf-card p {
+        font-size: 8px;
+        line-height: 1.5;
+        color: #777;
+    }
+
+    /* ------- Timetable row ------- */
+
+    .wf-timetable-row {
+        display: grid;
+        grid-template-columns: 90px 1fr 90px 60px;
+        gap: 10px;
+        align-items: center;
+        padding: 8px 12px;
+        background: #f4f4f4;
+        border-left: 2px solid #d71920;
+        margin-bottom: 3px;
+        font-size: 9px;
+    }
+
+    .wf-timetable-row .time { color: #d71920; font-weight: bold; }
+    .wf-timetable-row .name { font-weight: bold; }
+    .wf-timetable-row .type { font-size: 7px; color: #888; letter-spacing: 1px; }
+    .wf-timetable-row .btn {
+        background: #d71920;
+        color: #fff;
+        text-align: center;
+        padding: 4px;
+        font-size: 8px;
+        font-weight: bold;
+    }
+
+    /* ------- Pricing card ------- */
+
+    .wf-pricing-card {
+        border: 1px solid #ccc;
+        padding: 15px;
+        background: #fff;
+        position: relative;
+        font-size: 9px;
+    }
+
+    .wf-pricing-card.featured {
+        border: 2px solid #d71920;
+    }
+
+    .wf-pricing-card .badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #d71920;
+        color: #fff;
+        padding: 3px 6px;
+        font-size: 7px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .wf-pricing-card h4 {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .wf-price {
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 8px;
+    }
+
+    .wf-price span {
+        font-size: 10px;
+        color: #888;
+        font-weight: normal;
+    }
+
+    .wf-pricing-card ul {
+        list-style: none;
+        font-size: 8px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .wf-pricing-card li {
+        padding: 2px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .wf-pricing-card .btn {
+        width: 100%;
+        text-align: center;
+        padding: 6px;
+        font-size: 8px;
+    }
+
+    /* ------- Account layout ------- */
+
+    .wf-account {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 20px;
+        padding: 25px 30px;
+    }
+
+    .wf-sidebar {
+        border: 1px solid #ccc;
+        padding: 15px;
+        background: #f9f9f9;
+    }
+
+    .wf-avatar {
+        width: 40px;
+        height: 40px;
+        background: #080808;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .wf-sidebar h5 {
+        font-size: 9px;
+        color: #d71920;
+        letter-spacing: 1px;
+        margin-bottom: 3px;
+    }
+
+    .wf-sidebar strong {
+        font-size: 11px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .wf-menu-item {
+        padding: 6px 0;
+        font-size: 9px;
+        border-bottom: 1px solid #eee;
+        color: #444;
+    }
+
+    .wf-menu-item.active {
+        color: #d71920;
+        font-weight: bold;
+        border-left: 2px solid #d71920;
+        padding-left: 6px;
+    }
+
+    .wf-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .wf-stat {
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 9px;
+    }
+
+    .wf-stat span {
+        font-size: 7px;
+        color: #888;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .wf-stat strong {
+        font-size: 10px;
+        color: #080808;
+    }
+
+    /* ------- Footer ------- */
+
+    .wf-footer {
+        background: #080808;
+        color: #fff;
+        padding: 20px 30px;
+        font-size: 8px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .wf-footer h6 {
+        font-size: 8px;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+    }
+
+    .wf-footer p, .wf-footer a {
+        color: #999;
+        font-size: 7px;
+        display: block;
+        margin-bottom: 3px;
+        text-decoration: none;
+    }
+
+    /* ------- Form ------- */
+
+    .wf-form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .wf-form-group {
+        margin-bottom: 10px;
+    }
+
+    .wf-form-label {
+        font-size: 7px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #080808;
+        margin-bottom: 4px;
+        display: block;
+    }
+
+    .wf-input {
+        border: 1px solid #bbb;
+        background: #fff;
+        padding: 7px;
+        font-size: 9px;
+        color: #999;
+    }
+
+    /* ------- Tabs ------- */
+
+    .wf-tabs {
+        display: flex;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 15px;
+    }
+
+    .wf-tab {
+        padding: 8px 15px;
+        font-size: 9px;
+        font-weight: bold;
+        color: #888;
+        letter-spacing: 1px;
+    }
+
+    .wf-tab.active {
+        color: #d71920;
+        border-bottom: 2px solid #d71920;
+        margin-bottom: -2px;
+    }
+
+    /* ------- Note ------- */
+
+    .wf-note {
+        font-size: 8px;
+        color: #999;
+        font-style: italic;
+        padding: 6px 12px;
+        background: #fafafa;
+        border-top: 1px solid #eee;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">DoBu Martial Arts — Medium-Fidelity Wireframes</h1>
+<p class="page-subtitle">10-page multipage website design. Each wireframe represents the planned layout of one page.</p>
+
+<!-- ============================================================ -->
+<!-- 1. HOME PAGE                                                 -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">1. HOME PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero">
+        <div class="wf-hero-eyebrow">DISCIPLINE • STRENGTH • CONFIDENCE</div>
+        <h2>TRAIN HARD.<br><span>FIGHT SMART.</span></h2>
+        <p>Welcome to DoBu Martial Arts. Train with experienced instructors, improve your fitness and develop the confidence to reach your goals.</p>
+        <div class="wf-hero-btns">
+            <div class="wf-btn">JOIN NOW</div>
+            <div class="wf-btn outline">VIEW CLASSES</div>
+        </div>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">WELCOME TO DOBU</div>
+        <h3>MORE THAN A <span>GYM</span></h3>
+        <div class="wf-row cols-2">
+            <div>
+                <p style="font-size:9px;color:#555;margin-bottom:10px;">DoBu Martial Arts is a dedicated martial arts and fitness centre designed for beginners, experienced practitioners and families.</p>
+                <p style="font-size:9px;color:#555;">Our facility provides a large training area, gym, sauna, steam room, changing facilities and showers.</p>
+            </div>
+            <div class="wf-row cols-2" style="margin:0;">
+                <div class="wf-card"><div class="wf-card-num">01</div><h4>Martial Arts</h4><p>Judo, Jiu-Jitsu, Karate and Muay Thai.</p></div>
+                <div class="wf-card"><div class="wf-card-num">02</div><h4>Fitness</h4><p>Strength and conditioning for every level.</p></div>
+                <div class="wf-card"><div class="wf-card-num">03</div><h4>Train Hard</h4><p>Build strength, discipline and confidence.</p></div>
+                <div class="wf-card"><div class="wf-card-num">04</div><h4>Community</h4><p>Train together and become part of DoBu.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-section dark">
+        <div class="wf-section-label">WHAT WE TEACH</div>
+        <h3>MARTIAL <span>ARTS</span></h3>
+        <div class="wf-row cols-4">
+            <div class="wf-card" style="background:#151515;border-color:#333;color:#ccc;">
+                <div class="wf-card-num">01</div><h4 style="color:#fff;">JUDO</h4><p style="color:#999;">Throws, balance and grappling.</p>
+            </div>
+            <div class="wf-card" style="background:#151515;border-color:#333;color:#ccc;">
+                <div class="wf-card-num">02</div><h4 style="color:#fff;">JIU-JITSU</h4><p style="color:#999;">Ground control and submissions.</p>
+            </div>
+            <div class="wf-card" style="background:#151515;border-color:#333;color:#ccc;">
+                <div class="wf-card-num">03</div><h4 style="color:#fff;">KARATE</h4><p style="color:#999;">Striking and discipline.</p>
+            </div>
+            <div class="wf-card" style="background:#151515;border-color:#333;color:#ccc;">
+                <div class="wf-card-num">04</div><h4 style="color:#fff;">MUAY THAI</h4><p style="color:#999;">Striking and conditioning.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-section light">
+        <div class="wf-section-label">CHOOSE YOUR PLAN</div>
+        <h3>MEMBERSHIP <span>PLANS</span></h3>
+        <div class="wf-row cols-4">
+            <div class="wf-pricing-card"><h4>Basic</h4><div class="wf-price">£25<span>/mo</span></div><ul><li>1 martial art</li><li>2 sessions / wk</li></ul><div class="wf-btn dark">CHOOSE</div></div>
+            <div class="wf-pricing-card"><h4>Intermediate</h4><div class="wf-price">£35<span>/mo</span></div><ul><li>1 martial art</li><li>3 sessions / wk</li></ul><div class="wf-btn dark">CHOOSE</div></div>
+            <div class="wf-pricing-card featured"><div class="badge">POPULAR</div><h4>Advanced</h4><div class="wf-price">£45<span>/mo</span></div><ul><li>Any 2 arts</li><li>5 sessions / wk</li></ul><div class="wf-btn">CHOOSE</div></div>
+            <div class="wf-pricing-card"><h4>Elite</h4><div class="wf-price">£60<span>/mo</span></div><ul><li>Unlimited</li><li>All arts</li></ul><div class="wf-btn dark">CHOOSE</div></div>
+        </div>
+    </div>
+
+    <div class="wf-section" style="background:#d71920;color:#fff;text-align:center;">
+        <div class="wf-section-label" style="color:#fff;">READY TO START?</div>
+        <h3 style="color:#fff;">YOUR JOURNEY <span style="color:#fff;">STARTS HERE.</span></h3>
+        <div class="wf-btn dark" style="display:inline-block;margin-top:10px;">JOIN DOBU</div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu Martial Arts</h6><p>Train hard. Fight smart. Build confidence.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>About</a><a>Martial Arts</a><a>Classes</a><a>Membership</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Book a Class</a><a>Contact</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p><p>01234 567890</p></div>
+    </div>
+
+    <div class="wf-note">Layout notes: full-bleed dark hero, two-column intro, four-card martial arts grid on black, four-column pricing on light grey, red CTA band, four-column footer.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. ABOUT                                                     -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">2. ABOUT PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">ABOUT DOBU</div>
+        <h2>BUILT FOR <span>EVERY FIGHT.</span></h2>
+        <p>A dedicated martial arts and fitness centre helping people build strength, discipline and confidence.</p>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">WHO WE ARE</div>
+        <h3>WELCOME TO <span>DOBU</span></h3>
+        <div class="wf-row cols-2">
+            <div>
+                <p style="font-size:11px;font-weight:bold;color:#080808;margin-bottom:10px;">DoBu Martial Arts is a martial arts and fitness centre designed for people of all experience levels.</p>
+                <p style="font-size:9px;color:#666;margin-bottom:8px;">Whether you are completely new to martial arts, returning to training or an experienced practitioner, DoBu provides a supportive environment.</p>
+                <p style="font-size:9px;color:#666;">Our programme includes Judo, Jiu-Jitsu, Karate and Muay Thai, alongside fitness and personal training services.</p>
+            </div>
+            <div class="wf-row cols-2" style="margin:0;">
+                <div class="wf-card" style="border-left:3px solid #d71920;"><div class="wf-card-num">01</div><h4>MARTIAL ARTS</h4><p>Multiple disciplines taught by experienced coaches.</p></div>
+                <div class="wf-card" style="border-left:3px solid #d71920;"><div class="wf-card-num">02</div><h4>FITNESS</h4><p>Improve strength, conditioning and physical fitness.</p></div>
+                <div class="wf-card" style="border-left:3px solid #d71920;grid-column:1 / -1;"><div class="wf-card-num">03</div><h4>COMMUNITY</h4><p>An inclusive environment for beginners, adults and juniors.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-section light">
+        <div class="wf-section-label">OUR FACILITIES</div>
+        <h3>TRAIN WITH THE <span>RIGHT EQUIPMENT</span></h3>
+        <div class="wf-row cols-3">
+            <div class="wf-card"><div class="wf-card-num">01</div><h4>LARGE MAT AREA</h4><p>Dedicated matted training area.</p></div>
+            <div class="wf-card"><div class="wf-card-num">02</div><h4>GYM</h4><p>Fully equipped fitness room.</p></div>
+            <div class="wf-card"><div class="wf-card-num">03</div><h4>SAUNA</h4><p>Relax after training.</p></div>
+            <div class="wf-card"><div class="wf-card-num">04</div><h4>STEAM ROOM</h4><p>Recovery facility.</p></div>
+            <div class="wf-card"><div class="wf-card-num">05</div><h4>SHOWERS</h4><p>Changing and shower facilities.</p></div>
+            <div class="wf-card"><div class="wf-card-num">06</div><h4>TRAINING SPACE</h4><p>Flexible environment for classes.</p></div>
+        </div>
+    </div>
+
+    <div class="wf-section dark">
+        <div class="wf-section-label">OUR APPROACH</div>
+        <h3>BUILT ON <span>DISCIPLINE</span></h3>
+        <div class="wf-row cols-4">
+            <div><div class="wf-card-num">01</div><h4 style="color:#fff;">DISCIPLINE</h4><p style="color:#999;font-size:8px;">Consistency, focus and commitment.</p></div>
+            <div><div class="wf-card-num">02</div><h4 style="color:#fff;">RESPECT</h4><p style="color:#999;font-size:8px;">Cooperation and mutual respect.</p></div>
+            <div><div class="wf-card-num">03</div><h4 style="color:#fff;">PROGRESS</h4><p style="color:#999;font-size:8px;">Progressive skill development.</p></div>
+            <div><div class="wf-card-num">04</div><h4 style="color:#fff;">CONFIDENCE</h4><p style="color:#999;font-size:8px;">Building belief through training.</p></div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>About</a><a>Classes</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: dark page hero, two-column intro with numbered highlight boxes, six-card facilities grid on light grey, four-column values on black.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. MARTIAL ARTS                                              -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">3. MARTIAL ARTS PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">WHAT WE TEACH</div>
+        <h2>FIND YOUR <span>DISCIPLINE.</span></h2>
+        <p>Explore four martial arts disciplines taught at DoBu Martial Arts.</p>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">OUR PROGRAMMES</div>
+        <h3>TRAIN YOUR <span>WAY</span></h3>
+        <p style="font-size:9px;color:#666;text-align:center;max-width:500px;margin:0 auto;">DoBu offers martial arts training for different experience levels and goals. Members can focus on a single discipline or combine different martial arts depending on their membership.</p>
+    </div>
+
+    <!-- Judo -->
+    <div class="wf-section" style="display:grid;grid-template-columns:120px 1fr;gap:20px;">
+        <div style="font-size:48px;font-weight:900;color:#d71920;line-height:0.9;">01</div>
+        <div>
+            <div class="wf-section-label">MARTIAL ART</div>
+            <h3 style="font-size:32px;">JUDO</h3>
+            <p style="font-size:10px;color:#666;margin:10px 0;">Judo focuses on balance, movement, throws, control and grappling techniques.</p>
+            <div class="wf-row cols-3" style="margin:15px 0;">
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;"><strong>FOCUS</strong><br>Throws & Grappling</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;"><strong>LEVEL</strong><br>Beginner – Advanced</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;"><strong>SKILLS</strong><br>Balance & Control</div>
+            </div>
+            <div class="wf-btn">VIEW JUDO CLASSES</div>
+        </div>
+    </div>
+
+    <!-- Jiu-Jitsu -->
+    <div class="wf-section dark" style="display:grid;grid-template-columns:120px 1fr;gap:20px;">
+        <div style="font-size:48px;font-weight:900;color:#d71920;line-height:0.9;">02</div>
+        <div>
+            <div class="wf-section-label">MARTIAL ART</div>
+            <h3 style="font-size:32px;">JIU-JITSU</h3>
+            <p style="font-size:10px;color:#aaa;margin:10px 0;">Develops grappling and ground-fighting skills, including positional control, escapes and submissions.</p>
+            <div class="wf-row cols-3" style="margin:15px 0;">
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;color:#ccc;"><strong>FOCUS</strong><br>Grappling</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;color:#ccc;"><strong>LEVEL</strong><br>Beginner – Advanced</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;color:#ccc;"><strong>SKILLS</strong><br>Technique & Control</div>
+            </div>
+            <div class="wf-btn">VIEW JIU-JITSU CLASSES</div>
+        </div>
+    </div>
+
+    <!-- Karate -->
+    <div class="wf-section" style="display:grid;grid-template-columns:120px 1fr;gap:20px;">
+        <div style="font-size:48px;font-weight:900;color:#d71920;line-height:0.9;">03</div>
+        <div>
+            <div class="wf-section-label">MARTIAL ART</div>
+            <h3 style="font-size:32px;">KARATE</h3>
+            <p style="font-size:10px;color:#666;margin:10px 0;">Combines striking techniques, movement, coordination and structured practice.</p>
+            <div class="wf-row cols-3" style="margin:15px 0;">
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;"><strong>FOCUS</strong><br>Striking</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;"><strong>LEVEL</strong><br>Beginner – Advanced</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;"><strong>SKILLS</strong><br>Speed & Technique</div>
+            </div>
+            <div class="wf-btn">VIEW KARATE CLASSES</div>
+        </div>
+    </div>
+
+    <!-- Muay Thai -->
+    <div class="wf-section dark" style="display:grid;grid-template-columns:120px 1fr;gap:20px;">
+        <div style="font-size:48px;font-weight:900;color:#d71920;line-height:0.9;">04</div>
+        <div>
+            <div class="wf-section-label">MARTIAL ART</div>
+            <h3 style="font-size:32px;">MUAY THAI</h3>
+            <p style="font-size:10px;color:#aaa;margin:10px 0;">Develops striking technique, coordination, conditioning and endurance.</p>
+            <div class="wf-row cols-3" style="margin:15px 0;">
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;color:#ccc;"><strong>FOCUS</strong><br>Striking</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;color:#ccc;"><strong>LEVEL</strong><br>Beginner – Advanced</div>
+                <div style="border-top:2px solid #d71920;padding-top:6px;font-size:8px;color:#ccc;"><strong>SKILLS</strong><br>Power & Endurance</div>
+            </div>
+            <div class="wf-btn">VIEW MUAY THAI CLASSES</div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>About</a><a>Classes</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: alternating dark/light full-width discipline sections with large numbered anchor (01–04), three-column info grid, CTA button.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. CLASSES                                                   -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">4. CLASSES / TIMETABLE PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">TRAINING TIMETABLE</div>
+        <h2>FIND YOUR <span>CLASS.</span></h2>
+        <p>Explore the weekly DoBu Martial Arts timetable and find a training session that fits your schedule.</p>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">WEEKLY SCHEDULE</div>
+        <h3>TRAINING <span>TIMETABLE</span></h3>
+        <p style="font-size:9px;color:#666;text-align:center;">DoBu provides martial arts training throughout the week, together with private tuition and open mat sessions.</p>
+    </div>
+
+    <div class="wf-section" style="background:#080808;color:#fff;padding:12px 30px;font-size:9px;font-weight:bold;">
+        BOOKING SUMMARY: <span style="color:#d71920;">0 of 2 weekly sessions booked</span>
+    </div>
+
+    <!-- Monday -->
+    <div class="wf-section" style="padding:15px 30px;border-top:1px solid #ddd;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <span style="color:#d71920;font-weight:bold;font-size:10px;">01</span>
+            <h3 style="font-size:16px;margin:0;">MONDAY</h3>
+        </div>
+        <div class="wf-timetable-row"><div class="time">06:00 – 07:30</div><div class="name">Jiu-Jitsu</div><div class="type">MARTIAL ARTS</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row"><div class="time">08:00 – 10:00</div><div class="name">Muay Thai</div><div class="type">MARTIAL ARTS</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row"><div class="time">10:30 – 12:00</div><div class="name">Private Tuition</div><div class="type">PRIVATE</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row"><div class="time">13:00 – 14:30</div><div class="name">Open Mat</div><div class="type">OPEN MAT</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row"><div class="time">15:00 – 17:00</div><div class="name">Kids Jiu-Jitsu</div><div class="type">JUNIORS</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row"><div class="time">17:30 – 19:00</div><div class="name">Karate</div><div class="type">MARTIAL ARTS</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row"><div class="time">19:00 – 21:00</div><div class="name">Jiu-Jitsu</div><div class="type">MARTIAL ARTS</div><div class="btn">BOOK</div></div>
+    </div>
+
+    <!-- Tuesday (dark) -->
+    <div class="wf-section dark" style="padding:15px 30px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <span style="color:#d71920;font-weight:bold;font-size:10px;">02</span>
+            <h3 style="font-size:16px;margin:0;color:#fff;">TUESDAY</h3>
+        </div>
+        <div class="wf-timetable-row" style="background:#171717;"><div class="time">06:00 – 07:30</div><div class="name" style="color:#fff;">Karate</div><div class="type" style="color:#999;">MARTIAL ARTS</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row" style="background:#171717;"><div class="time">08:00 – 10:00</div><div class="name" style="color:#fff;">Private Tuition</div><div class="type" style="color:#999;">PRIVATE</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row" style="background:#171717;"><div class="time">13:00 – 14:30</div><div class="name" style="color:#fff;">Open Mat</div><div class="type" style="color:#999;">OPEN MAT</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row" style="background:#171717;"><div class="time">17:30 – 19:00</div><div class="name" style="color:#fff;">Muay Thai</div><div class="type" style="color:#999;">MARTIAL ARTS</div><div class="btn">BOOK</div></div>
+        <div class="wf-timetable-row" style="background:#171717;"><div class="time">19:00 – 21:00</div><div class="name" style="color:#fff;">Judo</div><div class="type" style="color:#999;">MARTIAL ARTS</div><div class="btn">BOOK</div></div>
+    </div>
+
+    <div class="wf-section light" style="text-align:center;">
+        <div class="wf-section-label">MORE TRAINING OPTIONS</div>
+        <h3>SPECIAL <span>PROGRAMMES</span></h3>
+        <div class="wf-row cols-3">
+            <div class="wf-card"><div class="wf-card-num">6 WEEKS</div><h4>BEGINNERS' SELF-DEFENCE</h4><p>Two 1-hour sessions per week.</p><strong style="display:block;margin-top:6px;color:#080808;font-size:12px;">£180</strong></div>
+            <div class="wf-card"><div class="wf-card-num">ONE VISIT</div><h4>FITNESS ROOM</h4><p>Access for a single visit.</p><strong style="display:block;margin-top:6px;color:#080808;font-size:12px;">£6</strong></div>
+            <div class="wf-card"><div class="wf-card-num">ONE HOUR</div><h4>PERSONAL TRAINING</h4><p>One-to-one with a coach.</p><strong style="display:block;margin-top:6px;color:#080808;font-size:12px;">£35</strong></div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>Classes</a><a>Membership</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: seven day sections (Mon–Sun) alternating light and dark, each row has time / name / type / BOOK button. Booking summary bar at top shows plan limit.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. MEMBERSHIP                                                -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">5. MEMBERSHIP PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">MEMBERSHIP</div>
+        <h2>CHOOSE YOUR <span>PLAN.</span></h2>
+        <p>Train consistently, build your skills and choose the membership that fits your goals.</p>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">MEMBERSHIP OPTIONS</div>
+        <h3>TRAIN YOUR WAY.</h3>
+        <p style="font-size:9px;color:#666;text-align:center;max-width:500px;margin:0 auto;">Flexible membership options for beginners, experienced martial artists, juniors and advanced competitors.</p>
+    </div>
+
+    <div class="wf-section light">
+        <div class="wf-row cols-3">
+            <div class="wf-pricing-card"><div class="wf-card-num">01</div><h4>Basic</h4><div class="wf-price">£25<span>/mo</span></div><ul><li>1 martial art</li><li>2 sessions / week</li><li>Beginners</li></ul><div class="wf-btn dark">SELECT PLAN</div></div>
+            <div class="wf-pricing-card"><div class="wf-card-num">02</div><h4>Intermediate</h4><div class="wf-price">£35<span>/mo</span></div><ul><li>1 martial art</li><li>3 sessions / week</li><li>Regular students</li></ul><div class="wf-btn dark">SELECT PLAN</div></div>
+            <div class="wf-pricing-card featured"><div class="badge">MOST POPULAR</div><div class="wf-card-num">03</div><h4>Advanced</h4><div class="wf-price">£45<span>/mo</span></div><ul><li>Any 2 martial arts</li><li>5 sessions / week</li><li>Serious students</li></ul><div class="wf-btn">SELECT PLAN</div></div>
+            <div class="wf-pricing-card"><div class="wf-card-num">04</div><h4>Elite</h4><div class="wf-price">£60<span>/mo</span></div><ul><li>Unlimited classes</li><li>All martial arts</li><li>Dedicated athletes</li></ul><div class="wf-btn dark">SELECT PLAN</div></div>
+            <div class="wf-pricing-card"><div class="wf-card-num">05</div><h4>Junior</h4><div class="wf-price">£25<span>/mo</span></div><ul><li>All kids' sessions</li><li>Judo, Jiu-Jitsu, Karate</li><li>Young members</li></ul><div class="wf-btn dark">SELECT PLAN</div></div>
+            <div class="wf-pricing-card"><div class="wf-card-num">06</div><h4>Private Tuition</h4><div class="wf-price">£15<span>/hr</span></div><ul><li>One-to-one coaching</li><li>Personalised focus</li></ul><div class="wf-btn dark">SELECT PLAN</div></div>
+        </div>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">COMPARE</div>
+        <h3>FIND YOUR <span>FIT.</span></h3>
+        <table style="width:100%;border-collapse:collapse;font-size:9px;margin-top:10px;">
+            <tr style="background:#080808;color:#fff;">
+                <th style="padding:6px;text-align:left;">PLAN</th>
+                <th style="padding:6px;text-align:left;">PRICE</th>
+                <th style="padding:6px;text-align:left;">MARTIAL ARTS</th>
+                <th style="padding:6px;text-align:left;">SESSIONS</th>
+                <th style="padding:6px;text-align:left;">BEST FOR</th>
+            </tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px;">Basic</td><td>£25/mo</td><td>1</td><td>2/week</td><td>Beginners</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px;">Intermediate</td><td>£35/mo</td><td>1</td><td>3/week</td><td>Regular students</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px;">Advanced</td><td>£45/mo</td><td>Any 2</td><td>5/week</td><td>Serious students</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px;">Elite</td><td>£60/mo</td><td>All</td><td>Unlimited</td><td>Athletes</td></tr>
+            <tr><td style="padding:6px;">Junior</td><td>£25/mo</td><td>Kids'</td><td>All kids'</td><td>Young members</td></tr>
+        </table>
+    </div>
+
+    <div class="wf-section" style="background:#d71920;color:#fff;text-align:center;">
+        <div class="wf-section-label" style="color:#fff;">READY TO START?</div>
+        <h3 style="color:#fff;">YOUR TRAINING <span style="color:#fff;">STARTS HERE.</span></h3>
+        <div class="wf-btn dark" style="display:inline-block;margin-top:10px;">MY ACCOUNT</div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>About</a><a>Classes</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: six plan cards in three-column grid, Advanced visually emphasised with red border and badge, comparison table below.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. FITNESS                                                   -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">6. FITNESS PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">FITNESS & CONDITIONING</div>
+        <h2>BUILD YOUR <span>STRENGTH.</span></h2>
+        <p>Improve strength, conditioning, mobility and overall fitness to support your martial arts performance.</p>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">TRAIN BEYOND THE MAT</div>
+        <h3>FITNESS THAT <span>SUPPORTS FIGHTING.</span></h3>
+        <div class="wf-row cols-2">
+            <div></div>
+            <div>
+                <p style="font-size:9px;color:#666;margin-bottom:8px;">Martial arts requires more than technique. Strength, endurance, flexibility and conditioning all play an important role.</p>
+                <p style="font-size:9px;color:#666;">DoBu provides a fully equipped fitness room and professional personal training to help members become stronger and fitter.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-section light">
+        <div class="wf-section-label">OUR SERVICES</div>
+        <h3>TRAIN <span>SMARTER.</span></h3>
+        <div class="wf-row cols-3">
+            <div class="wf-card"><div class="wf-card-num">01</div><h4>FITNESS ROOM</h4><p>Train independently in the fully equipped fitness room.</p><strong style="display:block;margin-top:6px;color:#080808;">£6 / visit</strong><div class="wf-btn dark" style="margin-top:10px;">ENQUIRE</div></div>
+            <div class="wf-card"><div class="wf-card-num">02</div><h4>PERSONAL TRAINING</h4><p>One-to-one coaching to develop a personal programme.</p><strong style="display:block;margin-top:6px;color:#080808;">£35 / hour</strong><div class="wf-btn dark" style="margin-top:10px;">ENQUIRE</div></div>
+            <div class="wf-card"><div class="wf-card-num">03</div><h4>SELF-DEFENCE COURSE</h4><p>Six-week course for beginners, 2 sessions per week.</p><strong style="display:block;margin-top:6px;color:#080808;">£180</strong><div class="wf-btn dark" style="margin-top:10px;">BOOK</div></div>
+        </div>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">TRAINING FOCUS</div>
+        <h3>DEVELOP YOUR <span>ENGINE.</span></h3>
+        <div class="wf-row cols-4">
+            <div style="border-top:2px solid #080808;padding-top:8px;"><div class="wf-card-num">01</div><h4>STRENGTH</h4><p style="font-size:8px;color:#666;">Power for grappling and striking.</p></div>
+            <div style="border-top:2px solid #080808;padding-top:8px;"><div class="wf-card-num">02</div><h4>CONDITIONING</h4><p style="font-size:8px;color:#666;">Cardiovascular fitness.</p></div>
+            <div style="border-top:2px solid #080808;padding-top:8px;"><div class="wf-card-num">03</div><h4>MOBILITY</h4><p style="font-size:8px;color:#666;">Flexibility and movement.</p></div>
+            <div style="border-top:2px solid #080808;padding-top:8px;"><div class="wf-card-num">04</div><h4>PERFORMANCE</h4><p style="font-size:8px;color:#666;">Peak athletic output.</p></div>
+        </div>
+    </div>
+
+    <div class="wf-section dark">
+        <div class="wf-section-label">FITNESS COACHING</div>
+        <h3>TRAIN WITH <span>EXPERTS.</span></h3>
+        <div class="wf-row cols-2">
+            <div class="wf-card" style="background:#151515;border-color:#333;"><div class="wf-card-num">01</div><h4 style="color:#fff;">Traci Santiago</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">FITNESS COACH</p><p style="font-size:8px;color:#999;">BSc Sports Science with qualifications in health and nutrition.</p></div>
+            <div class="wf-card" style="background:#151515;border-color:#333;"><div class="wf-card-num">02</div><h4 style="color:#fff;">Harpreet Kaur</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">FITNESS COACH</p><p style="font-size:8px;color:#999;">BSc Physiotherapy and MSc Sports Science.</p></div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>Fitness</a><a>Membership</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: dark hero, three-card service grid, four-column training focus row, two-column coach preview on dark background.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. INSTRUCTORS                                               -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">7. INSTRUCTORS PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">OUR TEAM</div>
+        <h2>MEET THE <span>INSTRUCTORS.</span></h2>
+        <p>Learn from experienced martial artists and qualified fitness professionals.</p>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">EXPERIENCE & EXPERTISE</div>
+        <h3>COACHES WHO <span>KNOW THE CRAFT.</span></h3>
+        <div class="wf-row cols-2">
+            <div></div>
+            <div>
+                <p style="font-size:9px;color:#666;margin-bottom:8px;">Our coaching team combines martial arts experience, competitive knowledge and professional fitness qualifications.</p>
+                <p style="font-size:9px;color:#666;">Whether you are new to martial arts or working towards advanced development, our instructors can help you train safely.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-section light">
+        <div class="wf-section-label">MARTIAL ARTS COACHES</div>
+        <h3>LEARN FROM <span>EXPERIENCE.</span></h3>
+        <div class="wf-row cols-2">
+            <div class="wf-card"><div class="wf-card-num">01</div><h4>Mauricio Gomez</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">OWNER & HEAD COACH</p><p style="font-size:8px;color:#666;margin-bottom:8px;">Teaches all four martial arts.</p><div style="border-top:1px solid #ddd;padding-top:6px;font-size:8px;"><strong>QUALIFICATIONS</strong><br>4th Dan Judo<br>3rd Dan Jiu-Jitsu<br>1st Dan Karate<br>Accredited Muay Thai Coach</div></div>
+            <div class="wf-card"><div class="wf-card-num">02</div><h4>Sarah Nova</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">ASSISTANT COACH</p><p style="font-size:8px;color:#666;margin-bottom:8px;">Specialises in Karate.</p><div style="border-top:1px solid #ddd;padding-top:6px;font-size:8px;"><strong>QUALIFICATION</strong><br>5th Dan Karate</div></div>
+            <div class="wf-card"><div class="wf-card-num">03</div><h4>Guy Victory</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">ASSISTANT COACH</p><p style="font-size:8px;color:#666;margin-bottom:8px;">Teaches Jiu-Jitsu and Judo.</p><div style="border-top:1px solid #ddd;padding-top:6px;font-size:8px;"><strong>QUALIFICATIONS</strong><br>2nd Dan Jiu-Jitsu<br>1st Dan Judo</div></div>
+            <div class="wf-card"><div class="wf-card-num">04</div><h4>Morris Davis</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">ASSISTANT COACH</p><p style="font-size:8px;color:#666;margin-bottom:8px;">Specialises in Muay Thai and Karate.</p><div style="border-top:1px solid #ddd;padding-top:6px;font-size:8px;"><strong>QUALIFICATIONS</strong><br>Accredited Muay Thai Coach<br>3rd Dan Karate</div></div>
+        </div>
+    </div>
+
+    <div class="wf-section dark">
+        <div class="wf-section-label">FITNESS COACHES</div>
+        <h3>BUILD YOUR <span>ENGINE.</span></h3>
+        <div class="wf-row cols-2">
+            <div class="wf-card" style="background:#151515;border-color:#333;"><div class="wf-card-num">05</div><h4 style="color:#fff;">Traci Santiago</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">FITNESS COACH</p><div style="border-top:1px solid #333;padding-top:6px;font-size:8px;color:#ccc;"><strong>QUALIFICATIONS</strong><br>BSc Sports Science<br>Health & Nutrition</div></div>
+            <div class="wf-card" style="background:#151515;border-color:#333;"><div class="wf-card-num">06</div><h4 style="color:#fff;">Harpreet Kaur</h4><p style="font-size:8px;color:#d71920;letter-spacing:1px;margin:5px 0;">FITNESS COACH</p><div style="border-top:1px solid #333;padding-top:6px;font-size:8px;color:#ccc;"><strong>QUALIFICATIONS</strong><br>BSc Physiotherapy<br>MSc Sports Science</div></div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>Instructors</a><a>Classes</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: two-column instructor cards with numbered anchors and qualification lists, light section for martial arts coaches, dark section for fitness coaches.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 8. COMMUNITY                                                 -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">8. COMMUNITY PAGE (Members Only)</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">MEMBERS' COMMUNITY</div>
+        <h2>THE DOBU <span>FORUM.</span></h2>
+        <p>Share training tips, celebrate progress and connect with other DoBu members.</p>
+    </div>
+
+    <div class="wf-account">
+        <aside class="wf-sidebar">
+            <div class="wf-avatar">TU</div>
+            <h5>POSTING AS</h5>
+            <strong>Test User</strong>
+
+            <div style="margin-top:15px;">
+                <div class="wf-section-label" style="margin-bottom:8px;">SHARE WITH THE COMMUNITY</div>
+                <div class="wf-input" style="min-height:70px;">What are you training today?</div>
+                <div style="font-size:7px;color:#999;text-align:right;margin:4px 0;">0 / 500</div>
+                <div class="wf-btn" style="width:100%;text-align:center;margin-top:5px;">POST TO FORUM</div>
+            </div>
+        </aside>
+
+        <div>
+            <h3 style="font-size:18px;margin-bottom:15px;">LATEST <span style="color:#d71920;">POSTS.</span></h3>
+
+            <div style="border:1px solid #ddd;padding:12px;margin-bottom:10px;display:grid;grid-template-columns:36px 1fr 20px;gap:10px;align-items:start;">
+                <div class="wf-avatar" style="width:36px;height:36px;">TU</div>
+                <div>
+                    <div style="font-size:9px;font-weight:bold;margin-bottom:3px;">Test User <span style="color:#999;font-weight:normal;">· just now</span></div>
+                    <p style="font-size:9px;color:#555;">Training Jiu-Jitsu tonight. Anyone else going?</p>
+                </div>
+                <div style="font-size:12px;color:#999;text-align:center;">×</div>
+            </div>
+
+            <div style="border:1px solid #ddd;padding:12px;margin-bottom:10px;display:grid;grid-template-columns:36px 1fr 20px;gap:10px;align-items:start;">
+                <div class="wf-avatar" style="width:36px;height:36px;background:#333;">JD</div>
+                <div>
+                    <div style="font-size:9px;font-weight:bold;margin-bottom:3px;">Jane Doe <span style="color:#999;font-weight:normal;">· 2 hr ago</span></div>
+                    <p style="font-size:9px;color:#555;">Passed my first grading in Karate! Massive thanks to the coaches.</p>
+                </div>
+                <div></div>
+            </div>
+
+            <div style="border:1px solid #ddd;padding:12px;display:grid;grid-template-columns:36px 1fr 20px;gap:10px;align-items:start;">
+                <div class="wf-avatar" style="width:36px;height:36px;background:#333;">MS</div>
+                <div>
+                    <div style="font-size:9px;font-weight:bold;margin-bottom:3px;">Mark Smith <span style="color:#999;font-weight:normal;">· 1 day ago</span></div>
+                    <p style="font-size:9px;color:#555;">Recommended drills for improving Muay Thai footwork?</p>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>Classes</a><a>Membership</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: two-column layout with composer sidebar (sticky) and post feed on the right. Only the user's own posts show a delete button.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 9. CONTACT                                                   -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">9. CONTACT PAGE</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium">
+        <div class="wf-hero-eyebrow">CONTACT DOBU</div>
+        <h2>GET IN TOUCH.</h2>
+        <p>Have a question about classes, memberships or training? Send us an enquiry.</p>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-section-label">CONTACT US</div>
+        <h3>READY TO START <span>TRAINING?</span></h3>
+        <div class="wf-row cols-2">
+            <div></div>
+            <div>
+                <p style="font-size:9px;color:#666;margin-bottom:8px;">Whether you are completely new or an experienced practitioner, DoBu offers training options for different ages, abilities and goals.</p>
+                <p style="font-size:9px;color:#666;">Use the form to ask about memberships, classes, private tuition, fitness training or our self-defence programme.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-section light">
+        <div class="wf-section-label">HOW CAN WE HELP?</div>
+        <h3>CONTACT DETAILS</h3>
+        <div class="wf-row cols-3">
+            <div class="wf-card"><div class="wf-card-num">01</div><h4>GENERAL ENQUIRIES</h4><p>Questions about classes, memberships, facilities.</p><p style="color:#d71920;font-size:8px;margin-top:6px;font-weight:bold;">info@dobumartialarts.com</p></div>
+            <div class="wf-card"><div class="wf-card-num">02</div><h4>PHONE</h4><p>Speak with the DoBu team about training and bookings.</p><p style="color:#d71920;font-size:8px;margin-top:6px;font-weight:bold;">01234 567890</p></div>
+            <div class="wf-card"><div class="wf-card-num">03</div><h4>OPENING HOURS</h4><p>Training is available throughout the week.</p><p style="color:#080808;font-size:8px;margin-top:6px;font-weight:bold;">MON – SUN</p></div>
+        </div>
+    </div>
+
+    <div class="wf-section">
+        <div class="wf-row cols-2">
+            <div>
+                <div class="wf-section-label">SEND AN ENQUIRY</div>
+                <h3>LET'S TALK <span>TRAINING.</span></h3>
+                <p style="font-size:9px;color:#666;">Complete the form and provide a few details about what you are interested in.</p>
+                <div style="margin-top:15px;font-size:9px;">
+                    <div style="padding:8px 0;border-bottom:1px solid #eee;color:#666;">VIEW TIMETABLE →</div>
+                    <div style="padding:8px 0;border-bottom:1px solid #eee;color:#666;">VIEW MEMBERSHIPS →</div>
+                    <div style="padding:8px 0;border-bottom:1px solid #eee;color:#666;">MY ACCOUNT →</div>
+                </div>
+            </div>
+            <div style="background:#f7f7f7;padding:20px;border:1px solid #ddd;">
+                <div class="wf-form-row">
+                    <div class="wf-form-group"><label class="wf-form-label">FULL NAME</label><div class="wf-input">Your name</div></div>
+                    <div class="wf-form-group"><label class="wf-form-label">EMAIL</label><div class="wf-input">you@example.com</div></div>
+                </div>
+                <div class="wf-form-row">
+                    <div class="wf-form-group"><label class="wf-form-label">PHONE</label><div class="wf-input">Your phone</div></div>
+                    <div class="wf-form-group"><label class="wf-form-label">SUBJECT</label><div class="wf-input">Select a subject ▾</div></div>
+                </div>
+                <div class="wf-form-group"><label class="wf-form-label">MESSAGE</label><div class="wf-input" style="min-height:50px;">Tell us how we can help...</div></div>
+                <div class="wf-btn">SEND ENQUIRY</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>About</a><a>Classes</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: three-column contact info cards, two-column contact form with labelled inputs, quick links on the left, form on the right.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 10. MY ACCOUNT                                               -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">10. MY ACCOUNT PAGE (Dashboard, logged in)</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium" style="min-height:80px;padding:20px 30px;">
+        <div class="wf-hero-eyebrow">MEMBER AREA</div>
+        <h2 style="font-size:24px;">MY ACCOUNT.</h2>
+        <p>Manage your profile, membership and upcoming training from one place.</p>
+    </div>
+
+    <div class="wf-account">
+        <aside class="wf-sidebar">
+            <div class="wf-avatar">TU</div>
+            <h5>MEMBER</h5>
+            <strong>Test User</strong>
+
+            <div class="wf-menu-item active">Overview</div>
+            <div class="wf-menu-item">Profile</div>
+            <div class="wf-menu-item">Membership</div>
+            <div class="wf-menu-item">My Training</div>
+
+            <div class="wf-btn dark" style="width:100%;text-align:center;margin-top:15px;">LOG OUT</div>
+        </aside>
+
+        <div>
+            <div class="wf-section-label">ACCOUNT OVERVIEW</div>
+            <h3 style="font-size:20px;margin-bottom:15px;">WELCOME <span>TEST.</span></h3>
+
+            <div class="wf-stats">
+                <div class="wf-stat"><span>MEMBERSHIP</span><strong>Basic</strong></div>
+                <div class="wf-stat"><span>MONTHLY PRICE</span><strong>£25</strong></div>
+                <div class="wf-stat"><span>UPCOMING TRAINING</span><strong>2 booked</strong></div>
+            </div>
+
+            <div class="wf-section-label" style="margin-top:15px;">QUICK ACTIONS</div>
+            <h3 style="font-size:16px;">MANAGE YOUR <span>TRAINING.</span></h3>
+
+            <div class="wf-row cols-3">
+                <div class="wf-card"><div class="wf-card-num">01</div><h4>BOOK A CLASS</h4><p>View the timetable and book your next session.</p><div style="margin-top:8px;font-size:8px;font-weight:bold;">VIEW CLASSES →</div></div>
+                <div class="wf-card"><div class="wf-card-num">02</div><h4>CHANGE MEMBERSHIP</h4><p>Compare plans and select a new option.</p><div style="margin-top:8px;font-size:8px;font-weight:bold;">VIEW MEMBERSHIPS →</div></div>
+                <div class="wf-card"><div class="wf-card-num">03</div><h4>FITNESS</h4><p>Fitness room, PT and conditioning.</p><div style="margin-top:8px;font-size:8px;font-weight:bold;">VIEW FITNESS →</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>Classes</a><a>Membership</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: two-column dashboard with sidebar (avatar, name, vertical menu, log out) and main content area. Panels switch via the sidebar menu.</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- Logged-out state                                             -->
+<!-- ============================================================ -->
+<div class="wireframe">
+    <div class="wf-label">10b. MY ACCOUNT PAGE (Logged out — login/register)</div>
+
+    <div class="wf-nav">
+        <div class="wf-logo">DoBu<small>MARTIAL ARTS</small></div>
+        <div class="wf-nav-links">
+            <span>HOME</span><span>ABOUT</span><span>MARTIAL ARTS</span><span>CLASSES</span>
+            <span>MEMBERSHIP</span><span>FITNESS</span><span>INSTRUCTORS</span><span>COMMUNITY</span>
+            <span>CONTACT</span><span>MY ACCOUNT</span>
+        </div>
+    </div>
+
+    <div class="wf-hero medium" style="min-height:80px;padding:20px 30px;">
+        <div class="wf-hero-eyebrow">MEMBER AREA</div>
+        <h2 style="font-size:24px;">MY ACCOUNT.</h2>
+        <p>Log in or create an account to manage your membership.</p>
+    </div>
+
+    <div class="wf-account">
+        <aside class="wf-sidebar">
+            <div class="wf-avatar">?</div>
+            <h5>STATUS</h5>
+            <strong>Guest</strong>
+            <div class="wf-menu-item active" style="color:#888;">Login Required</div>
+        </aside>
+
+        <div>
+            <div class="wf-section-label">MEMBER AREA</div>
+            <h3 style="font-size:20px;margin-bottom:15px;">WELCOME TO <span>DOBU.</span></h3>
+
+            <div class="wf-tabs">
+                <div class="wf-tab active">LOG IN</div>
+                <div class="wf-tab">CREATE ACCOUNT</div>
+            </div>
+
+            <div style="background:#f7f7f7;padding:20px;border:1px solid #ddd;">
+                <div class="wf-section-label">LOG IN TO YOUR ACCOUNT</div>
+                <div class="wf-form-group"><label class="wf-form-label">EMAIL</label><div class="wf-input">you@example.com</div></div>
+                <div class="wf-form-group"><label class="wf-form-label">PASSWORD</label><div class="wf-input">Your password</div></div>
+                <div class="wf-btn">LOG IN</div>
+                <p style="font-size:8px;color:#888;margin-top:10px;">New to DoBu? <span style="color:#d71920;">Create an account →</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-footer">
+        <div><h6 style="color:#fff;">DoBu</h6><p>Train hard. Fight smart.</p></div>
+        <div><h6 style="color:#fff;">QUICK LINKS</h6><a>Home</a><a>Classes</a><a>Membership</a></div>
+        <div><h6 style="color:#fff;">MEMBERS</h6><a>My Account</a><a>Community</a></div>
+        <div><h6 style="color:#fff;">CONTACT</h6><p>info@dobumartialarts.com</p></div>
+    </div>
+    <div class="wf-note">Layout notes: same page as dashboard but in logged-out state. Two tabs (Log In / Create Account). Register tab shows name, email, password, confirm password fields.</div>
+</div>
+
+</body>
+</html>

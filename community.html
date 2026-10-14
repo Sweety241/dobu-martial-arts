@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | DoBu Martial Arts</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span>DoBu</span>
+                <small>MARTIAL ARTS</small>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="martial-arts.html">Martial Arts</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="fitness.html">Fitness</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="community.html" class="active">Community</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">MEMBERS' COMMUNITY</p>
+                <h1>THE DOBU<br><span>FORUM.</span></h1>
+                <p>
+                    Share training tips, celebrate progress and connect with
+                    other DoBu members.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- COMMUNITY AREA -->
+        <section class="section">
+            <div class="container community-layout">
+
+                <!-- LEFT: COMPOSER -->
+                <aside class="community-composer">
+
+                    <div class="community-user-box">
+                        <div class="community-avatar" id="communityAvatar">?</div>
+                        <div>
+                            <p class="account-user-label">POSTING AS</p>
+                            <h3 id="communityName">Guest</h3>
+                        </div>
+                    </div>
+
+                    <div class="community-login-notice" id="communityLoginNotice" style="display:none;">
+                        <p>
+                            You need to be logged in to post.
+                            <a href="account.html">Log in →</a>
+                        </p>
+                    </div>
+
+                    <form id="postForm" style="display:none;">
+                        <label for="postContent" class="community-label">
+                            SHARE WITH THE COMMUNITY
+                        </label>
+
+                        <textarea
+                            id="postContent"
+                            rows="6"
+                            maxlength="500"
+                            placeholder="What are you training today?"
+                            required
+                        ></textarea>
+
+                        <div class="community-counter">
+                            <span id="postCounter">0</span> / 500
+                        </div>
+
+                        <button type="submit" class="btn">POST TO FORUM</button>
+
+                        <div id="postMessage" class="account-message" style="display:none;"></div>
+                    </form>
+
+                </aside>
+
+
+                <!-- RIGHT: FEED -->
+                <div class="community-feed">
+
+                    <div class="community-feed-heading">
+                        <h2>LATEST <span>POSTS.</span></h2>
+                    </div>
+
+                    <div id="postsList" class="posts-list">
+                        <p class="empty-bookings">Loading posts…</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div>
+                <a href="index.html" class="logo">
+                    <span>DoBu</span>
+                    <small>MARTIAL ARTS</small>
+                </a>
+                <p>Train hard. Fight smart. Build confidence, discipline and strength.</p>
+            </div>
+
+            <div>
+                <h4>QUICK LINKS</h4>
+                <a href="about.html">About</a>
+                <a href="martial-arts.html">Martial Arts</a>
+                <a href="classes.html">Classes</a>
+                <a href="membership.html">Membership</a>
+            </div>
+
+            <div>
+                <h4>MEMBERS</h4>
+                <a href="community.html">Community</a>
+                <a href="instructors.html">Instructors</a>
+                <a href="account.html">My Account</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-column footer-social">
+                <h4>FOLLOW US</h4>
+                <a href="https://instagram.com/dobumartialarts" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://facebook.com/dobumartialarts" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://youtube.com/@dobumartialarts" target="_blank" rel="noopener">YouTube</a>
+                <a href="https://twitter.com/dobumartialarts" target="_blank" rel="noopener">Twitter / X</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 DoBu Martial Arts. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
